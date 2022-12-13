@@ -27,6 +27,10 @@ with open("students.csv") as file:
         #MORE COMPACT
         student = {"name": name, "house": house}
         students.append(student)
+
+def get_name(student):        
+    return student["name"]
 # SINGLE QUOTES NEEDED INSIDE
-for student in students:
+# passing functions as arguments
+for student in sorted(students, key=get_name):
     print(f"{student['name']} is in {student['house']}")
